@@ -78,34 +78,37 @@
 
     <div class="container-md mt-4">
       <div class="row row-cols-1">
-        <div class="col d-flex flex-column">
+        <!-- col with table  -->
+        <div id="col-table" class="col d-flex flex-column">
           <div class="add-book d-flex justify-content-between mb-4">
             <h2>Catalogo Libri</h2>
             <button type="button" class="btn btn-primary">
               Aggiungi libro
             </button>
           </div>
+
+          <!-- table  -->
           <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col ">Titolo</th>
+                <th class="th-title" scope="col ">Titolo</th>
 
-                <th scope="col" class="d-none d-md-table-cell">
+                <th scope="col" class="th-loan-date d-none d-md-table-cell">
                   Data prestito
                 </th>
-                <th scope="col">Stato</th>
-                <th scope="col">Azioni</th>
+                <th class="state" scope="col">Stato</th>
+                <th class="actions" scope="col">Azioni</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td scope="row">I pilastri della terra</td>
+                <td class="td-title" scope="row">I pilastri della terra</td>
 
-                <td class="d-none d-md-table-cell">-</td>
-                <td>
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
                   <span class="badge text-bg-success">Disponibile</span>
                 </td>
-                <td>
+                <td class="td-action">
                   <button type="button" class="btn btn-outline-secondary">
                     <i class="fa-solid fa-pencil"></i>
                   </button>
@@ -115,13 +118,13 @@
                 </td>
               </tr>
               <tr>
-                <td scope="row">I pilastri della terra</td>
+                <td class="td-title" scope="row">I pilastri della terra</td>
 
-                <td class="d-none d-md-table-cell">-</td>
-                <td>
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
                   <span class="badge text-bg-success">Disponibile</span>
                 </td>
-                <td>
+                <td class="td-action">
                   <button type="button" class="btn btn-outline-secondary">
                     <i class="fa-solid fa-pencil"></i>
                   </button>
@@ -131,13 +134,125 @@
                 </td>
               </tr>
               <tr>
-                <td scope="row">I pilastri della terra</td>
+                <td class="td-title" scope="row">I pilastri della terra</td>
 
-                <td class="d-none d-md-table-cell">-</td>
-                <td>
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
                   <span class="badge text-bg-success">Disponibile</span>
                 </td>
-                <td>
+                <td class="td-action">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">I pilastri della terra</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-action">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">I pilastri della terra</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-action">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">I pilastri della terra</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-action">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">I pilastri della terra</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-action">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">I pilastri della terra</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-action">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">I pilastri della terra</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-action">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">I pilastri della terra</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-action">
                   <button type="button" class="btn btn-outline-secondary">
                     <i class="fa-solid fa-pencil"></i>
                   </button>
@@ -149,7 +264,140 @@
             </tbody>
           </table>
         </div>
-        <div class="col"></div>
+
+        <!-- col with cards  -->
+        <div id="col-cards" class="col">
+          <!-- card todo  -->
+          <div id="card-todo" class="card mb-4">
+            <h3 class="card-header">Todo</h3>
+
+            <div class="card-body">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="call-secretary"
+                    />
+                    <label class="form-check-label" for="call-secretary">
+                      Chiamare segreteria
+                    </label>
+                  </div>
+                </li>
+
+                <li class="list-group-item">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="expired-loan-notices"
+                    />
+                    <label class="form-check-label" for="expired-loan-notices">
+                      Mandare avvisi prestiti scaduti
+                    </label>
+                  </div>
+                </li>
+
+                <li class="list-group-item">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="order-new-books"
+                    />
+                    <label class="form-check-label" for="order-new-books">
+                      Ordinare nuovi libri
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- card faq  -->
+          <div id="card-faq" class="card mb-4">
+            <h3 class="card-header">F.A.Q.</h3>
+            <div class="card-body">
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      Come aggiungere un nuovo libro?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      Per aggiungere un nuovo libro cliccare sul tasto "Aggiungi
+                      Libro"
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseTwo"
+                    >
+                      Come posso accedere all'anagrafica utenti?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseTwo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      Per accedere all'anagrafica utenti andare alla sezione
+                      "Anagrafica Utenti"
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseThree"
+                    >
+                      Posso usare questa dashboard da mobile?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseThree"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      Certo, questa applicazione è completamente responsive
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
