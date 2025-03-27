@@ -47,7 +47,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
+              <a class="nav-link active" aria-current="page" href="./index.html"
                 >Catalogo Libri</a
               >
             </li>
@@ -87,7 +87,7 @@
             <!-- input nome autore  -->
             <div class="col-6">
               <div class="mb-3">
-                <label for="author-name" class="form-label fw-bold"
+                <label for="author-name" class="form-label fw-semibold"
                   >Nome Autore</label
                 >
                 <input
@@ -102,7 +102,7 @@
             <!-- input cognome autore  -->
             <div class="col-6">
               <div class="mb-3">
-                <label for="author-surname" class="form-label fw-bold"
+                <label for="author-surname" class="form-label fw-semibold"
                   >Cognome Autore</label
                 >
                 <input
@@ -118,7 +118,7 @@
 
             <div class="col-12">
               <div class="mb-3">
-                <label for="title" class="form-label fw-bold">Titolo</label>
+                <label for="title" class="form-label fw-semibold">Titolo</label>
                 <input
                   type="text"
                   id="title"
@@ -134,9 +134,9 @@
 
             <!-- input genere libro  -->
 
-            <div class="col-12">
+            <div class="col-12 col-lg-4">
               <div class="mb-3">
-                <label for="type" class="form-label fw-bold">Genere</label>
+                <label for="type" class="form-label fw-semibold">Genere</label>
                 <select class="form-select" aria-label="Default select example">
                   <option selected>Scegli il genere</option>
                   <option value="thriller">Thriller</option>
@@ -148,9 +148,9 @@
 
             <!-- input anno di pubblicazione  -->
 
-            <div class="col-12">
+            <div class="col-12 col-lg-4">
               <div class="mb-3">
-                <label for="title" class="form-label fw-bold"
+                <label for="title" class="form-label fw-semibold"
                   >Anno di pubblicazione</label
                 >
                 <input
@@ -163,9 +163,9 @@
 
             <!-- input codice isbn  -->
 
-            <div class="col-12">
+            <div class="col-12 col-lg-4">
               <div class="mb-3">
-                <label for="type" class="form-label fw-bold">ISBN#</label>
+                <label for="type" class="form-label fw-semibold">ISBN#</label>
                 <input
                   type="text"
                   id="isbn"
@@ -176,17 +176,20 @@
             </div>
           </div>
 
+          <!-- bordo separatore -->
           <div class="col-12">
             <div class="border border-light-subtle my-4"></div>
           </div>
 
+          <!-- note text area  -->
           <div class="col-12">
             <div class="mb-3">
-              <label for="note" class="form-label fw-bold">Note</label>
+              <label for="note" class="form-label fw-semibold">Note</label>
               <textarea class="form-control" id="note" rows="3"></textarea>
             </div>
           </div>
 
+          <!-- checkbox  -->
           <div class="form-check mb-3">
             <input
               class="form-check-input"
@@ -194,11 +197,12 @@
               value=""
               id="flexCheckDefault"
             />
-            <label class="form-check-label fw-bold" for="flexCheckDefault">
+            <label class="form-check-label fw-semibold" for="flexCheckDefault">
               Disponibile anche in digitale
             </label>
           </div>
 
+          <!-- bottone invio form  -->
           <button type="submit" class="btn btn-primary">Aggiungi libro</button>
         </form>
       </div>
