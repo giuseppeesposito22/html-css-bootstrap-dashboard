@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel=" icon" href="./img/boolean.png" type="image/x-icon" />
+
+    <!-- bootstrap  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <!-- navbar  -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./img/duck.png" alt="Bootstrap" width="50" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Catalogo Libri</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Anagrafica Utenti</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Storico Prestiti</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Help</a>
+            </li>
+          </ul>
+
+          <form class="d-flex" role="search">
+            <input
+              data-bs-theme="light"
+              class="form-control me-2"
+              type="search"
+              placeholder="Cerca..."
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-light" type="submit">Cerca</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- container md -->
+    <div class="container-md mt-4">
+      <div class="row row-cols-1 row-cols-lg-2">
+        <!-- col with table  -->
+        <div id="col-table" class="col-lg-8 d-flex flex-column">
+          <div class="add-book d-flex justify-content-between mb-4">
+            <div>
+              <h2>Catalogo Libri</h2>
+            </div>
+
+            <div>
+              <a
+                class="btn btn-primary"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasExample"
+                role="button"
+                aria-controls="offcanvasExample"
+              >
+                Aggiungi libro
+              </a>
+            </div>
+
+            <div
+              class="offcanvas offcanvas-start"
+              data-bs-theme="dark"
+              tabindex="-1"
+              id="offcanvasExample"
+              aria-labelledby="offcanvasExampleLabel"
+            >
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                  Aggiungi Libro
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <form>
+                  <div class="row">
+                    <!-- input nome autore  -->
+                    <div class="col-6">
+                      <div class="mb-3">
+                        <label for="author-name" class="form-label fw-semibold"
+                          >Nome Autore</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="author-name"
+                          placeholder="Inserisci il nome"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- input cognome autore  -->
+                    <div class="col-6">
+                      <div class="mb-3">
+                        <label
+                          for="author-surname"
+                          class="form-label fw-semibold"
+                          >Cognome Autore</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="author-surname"
+                          placeholder="Inserisci il nome"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- input titolo libro  -->
+
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="title" class="form-label fw-semibold"
+                          >Titolo</label
+                        >
+                        <input
+                          type="text"
+                          id="title"
+                          class="form-control"
+                          aria-describedby="title-help-block"
+                          placeholder="Inserisci il titolo del libro"
+                        />
+                        <div id="title-help-block" class="form-text">
+                          Titolo versione italiana
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- input genere libro  -->
+
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="type" class="form-label fw-semibold"
+                          >Genere</label
+                        >
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option selected>Scegli il genere</option>
+                          <option value="thriller">Thriller</option>
+                          <option value="romance">Romanzo rosa</option>
+                          <option value="biography">Biografia</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- input anno di pubblicazione  -->
+
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="title" class="form-label fw-semibold"
+                          >Anno pubblicazione
+                        </label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="Inserisci l'anno"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- input codice isbn  -->
+
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="type" class="form-label fw-semibold"
+                          >ISBN#</label
+                        >
+                        <input
+                          type="text"
+                          id="isbn"
+                          class="form-control"
+                          placeholder="Inserisci il codice ISBN#"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- bordo separatore -->
+                    <div class="col-12">
+                      <div class="border border-light-subtle my-4"></div>
+                    </div>
+
+                    <!-- note text area  -->
+                    <div class="col-12">
+                      <div class="mb-3">
+                        <label for="note" class="form-label fw-semibold"
+                          >Note</label
+                        >
+                        <textarea
+                          class="form-control"
+                          id="note"
+                          rows="3"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- checkbox  -->
+                  <div class="form-check mb-3">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label
+                      class="form-check-label fw-semibold"
+                      for="flexCheckDefault"
+                    >
+                      Disponibile anche in digitale
+                    </label>
+                  </div>
+                  <!-- bottone invio form  -->
+                  <button type="submit" class="btn btn-primary">
+                    Aggiungi libro
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- table  -->
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="th-title" scope="col ">Titolo</th>
+
+                <th scope="col" class="th-loan-date d-none d-md-table-cell">
+                  Data prestito
+                </th>
+                <th class="th-state" scope="col">Stato</th>
+                <th class="th-actions text-center" scope="col">Azioni</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-title" scope="row">I pilastri della terra</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-actions">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">I promessi sposi</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-actions">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">II signore degli anelli</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">18/10/2023</td>
+                <td class="td-state">
+                  <span class="badge text-white text-bg-warning"
+                    >In prestito</span
+                  >
+                </td>
+                <td class="td-actions">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">
+                  Harry Potter e la pietra filosofale
+                </td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-actions">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">II codice Da Vinci</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-danger">Non disponibile</span>
+                </td>
+                <td class="td-actions">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">Shining</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-actions">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">La divina commedia</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">21/09/2023</td>
+                <td class="td-state">
+                  <span class="badge text-white text-bg-warning"
+                    >In prestito</span
+                  >
+                </td>
+                <td class="td-actions">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">II trono di spade</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-actions">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">II mondo di Sofia</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-danger">Non disponibile</span>
+                </td>
+                <td class="td-actions">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">
+                  Le cronache di Narnia: il leone, la strega e l'armadio
+                </td>
+
+                <td class="td-loan-date d-none d-md-table-cell">25/07/2023</td>
+                <td class="td-state">
+                  <span class="badge text-white text-bg-warning"
+                    >In prestito</span
+                  >
+                </td>
+                <td class="td-actions">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">II piccolo principe</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-actions">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-title" scope="row">La storia infinita</td>
+
+                <td class="td-loan-date d-none d-md-table-cell">-</td>
+                <td class="td-state">
+                  <span class="badge text-bg-success">Disponibile</span>
+                </td>
+                <td class="td-actions">
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-pencil"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- col with cards  -->
+        <div id="col-cards" class="col-lg-4">
+          <!-- card todo  -->
+          <div id="card-todo" class="card mb-4">
+            <h3 class="card-header">Todo</h3>
+
+            <div class="card-body">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="call-secretary"
+                    />
+                    <label class="form-check-label" for="call-secretary">
+                      Chiamare segreteria
+                    </label>
+                  </div>
+                </li>
+
+                <li class="list-group-item">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="expired-loan-notices"
+                    />
+                    <label class="form-check-label" for="expired-loan-notices">
+                      Mandare avvisi prestiti scaduti
+                    </label>
+                  </div>
+                </li>
+
+                <li class="list-group-item">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="order-new-books"
+                    />
+                    <label class="form-check-label" for="order-new-books">
+                      Ordinare nuovi libri
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- card faq  -->
+          <div id="card-faq" class="card mb-4">
+            <h3 class="card-header">F.A.Q.</h3>
+            <div class="card-body">
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      Come aggiungere un nuovo libro?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      Per aggiungere un nuovo libro cliccare sul tasto "Aggiungi
+                      Libro"
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseTwo"
+                    >
+                      Come posso accedere all'anagrafica utenti?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseTwo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      Per accedere all'anagrafica utenti andare alla sezione
+                      "Anagrafica Utenti"
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseThree"
+                    >
+                      Posso usare questa dashboard da mobile?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseThree"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      Certo, questa applicazione è completamente responsive
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
